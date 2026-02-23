@@ -1,0 +1,7 @@
+{
+  "name": "Roost: The Chicken Festival Onboarding",
+  "description": "A gamified onboarding application for Roost Chicken Masters participating in the FUME festival, designed to streamline menu, equipment, and travel logistics.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
