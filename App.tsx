@@ -213,7 +213,7 @@ export default function App() {
         <div className="pt-8 space-y-4">
           <label className="block text-center text-[10px] font-black uppercase text-zinc-400 tracking-[0.3em]">Chicken Master Brand / Team Name</label>
           <input 
-            className="w-full bg-zinc-50 border border-zinc-200 rounded-3xl p-8 text-3xl focus:border-black outline-none transition-all placeholder:text-zinc-500 text-center uppercase tracking-widest font-black text-black"
+            className="w-full bg-white border-2 border-zinc-300 rounded-3xl p-8 text-3xl focus:border-black outline-none transition-all placeholder:text-zinc-400 text-center uppercase tracking-widest font-black text-black shadow-sm"
             placeholder="BRAND NAME"
             value={data.teamName}
             onChange={e => setData({...data, teamName: e.target.value})}
@@ -323,7 +323,7 @@ export default function App() {
             
             <div className="flex justify-between items-start gap-4">
               <input 
-                className="w-full bg-transparent border-b border-zinc-100 focus:border-black outline-none text-4xl font-black p-2 uppercase tracking-tighter placeholder:text-zinc-600 text-black"
+                className="w-full bg-white border-2 border-zinc-300 rounded-2xl px-6 py-4 focus:border-black outline-none text-4xl font-black uppercase tracking-tighter placeholder:text-zinc-400 text-black shadow-sm"
                 placeholder="DISH NAME"
                 value={item.dishName}
                 onChange={e => {
@@ -355,7 +355,7 @@ export default function App() {
               <div className="space-y-2">
                 <label className="text-[10px] font-black uppercase text-zinc-400 tracking-widest leading-tight">How many portions do you think you can make per day?</label>
                 <input 
-                  className="w-full bg-transparent border-b border-zinc-200 text-black p-2 text-xl font-black focus:border-black outline-none"
+                  className="w-full bg-white border border-zinc-300 rounded-xl text-black p-3 text-xl font-black focus:border-black outline-none shadow-sm"
                   placeholder="e.g. 500"
                   value={item.dailyPortionTarget}
                   onChange={e => {
@@ -367,13 +367,13 @@ export default function App() {
               </div>
               <div className="space-y-2">
                 <label className="text-[10px] font-black uppercase text-zinc-400 tracking-widest">Meat Specification</label>
-                <input className="w-full bg-transparent border-b border-zinc-200 text-black p-2 text-sm focus:border-black outline-none" placeholder="e.g. Corn-fed Free Range" value={item.meatSpec} onChange={e => {
+                <input className="w-full bg-white border border-zinc-300 rounded-xl text-black p-3 text-sm focus:border-black outline-none shadow-sm" placeholder="e.g. Corn-fed Free Range" value={item.meatSpec} onChange={e => {
                   const copy = [...data.menu]; copy[index].meatSpec = e.target.value; setData({...data, menu: copy});
                 }} />
               </div>
               <div className="space-y-2">
                 <label className="text-[10px] font-black uppercase text-zinc-400 tracking-widest">Total weight for portion requirements</label>
-                <input className="w-full bg-transparent border-b border-zinc-200 text-black p-2 text-sm focus:border-black outline-none" placeholder="e.g. 140lbs" value={item.weightPerCut} onChange={e => {
+                <input className="w-full bg-white border border-zinc-300 rounded-xl text-black p-3 text-sm focus:border-black outline-none shadow-sm" placeholder="e.g. 140lbs" value={item.weightPerCut} onChange={e => {
                   const copy = [...data.menu]; copy[index].weightPerCut = e.target.value; setData({...data, menu: copy});
                 }} />
               </div>
@@ -397,7 +397,7 @@ export default function App() {
                 {item.otherIngredients.map((ing, iIdx) => (
                   <div key={ing.id} className="flex gap-4 items-center animate-in slide-in-from-left-2 duration-300">
                     <input 
-                      className="flex-1 bg-zinc-50 border border-zinc-200 rounded-xl p-3 text-sm focus:border-black outline-none text-black"
+                      className="flex-1 bg-white border border-zinc-300 rounded-xl p-3 text-sm focus:border-black outline-none text-black shadow-sm"
                       placeholder="Ingredient Name"
                       value={ing.name}
                       onChange={e => {
@@ -407,7 +407,7 @@ export default function App() {
                       }}
                     />
                     <input 
-                      className="w-32 bg-zinc-50 border border-zinc-200 rounded-xl p-3 text-sm focus:border-black outline-none text-center text-black"
+                      className="w-32 bg-white border border-zinc-300 rounded-xl p-3 text-sm focus:border-black outline-none text-center text-black shadow-sm"
                       placeholder="Quantity"
                       value={ing.qty}
                       onChange={e => {
@@ -461,7 +461,7 @@ export default function App() {
                 <div className="space-y-3">
                   <label className="text-[10px] font-black uppercase text-zinc-400 tracking-widest">Purpose of Usage</label>
                   <textarea 
-                    className="w-full bg-zinc-50 border border-zinc-100 rounded-2xl p-6 text-sm min-h-[120px] focus:border-black outline-none text-black"
+                    className="w-full bg-white border border-zinc-300 rounded-2xl p-6 text-sm min-h-[120px] focus:border-black outline-none text-black shadow-sm"
                     placeholder="e.g. Trimming chicken, cold prep for sides..."
                     value={data.kitchen.purpose}
                     onChange={e => setData({...data, kitchen: {...data.kitchen, purpose: e.target.value}})}
@@ -470,7 +470,7 @@ export default function App() {
                 <div className="space-y-3">
                   <label className="text-[10px] font-black uppercase text-zinc-400 tracking-widest">Specific Kitchen Equipment Required</label>
                   <textarea 
-                    className="w-full bg-zinc-50 border border-zinc-100 rounded-2xl p-6 text-sm min-h-[120px] focus:border-black outline-none text-black"
+                    className="w-full bg-white border border-zinc-300 rounded-2xl p-6 text-sm min-h-[120px] focus:border-black outline-none text-black shadow-sm"
                     placeholder="e.g. Large blenders, commercial ovens..."
                     value={data.kitchen.specificEquipment}
                     onChange={e => setData({...data, kitchen: {...data.kitchen, specificEquipment: e.target.value}})}
@@ -515,19 +515,19 @@ export default function App() {
                {EQUIPMENT_TEMPLATES.find(t => t.label === item.item)?.icon || '🛠️'}
             </div>
             <div className="flex-1 min-w-[200px] space-y-4">
-              <input className="w-full bg-transparent font-black text-xl uppercase tracking-widest outline-none border-b border-zinc-100 focus:border-black transition-colors text-black" value={item.item} onChange={e => {
+              <input className="w-full bg-white font-black text-xl uppercase tracking-widest outline-none border border-zinc-300 rounded-xl px-4 py-2 focus:border-black transition-colors text-black shadow-sm" value={item.item} onChange={e => {
                 const copy = [...data.equipment]; copy[index].item = e.target.value; setData({...data, equipment: copy});
               }} />
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-1">
                   <label className="text-[9px] font-black uppercase text-zinc-400">Specification</label>
-                  <input className="w-full bg-zinc-50 border border-zinc-200 rounded-xl p-3 text-sm focus:border-black outline-none text-black" placeholder="Size, model, details..." value={item.spec} onChange={e => {
+                  <input className="w-full bg-white border border-zinc-300 rounded-xl p-3 text-sm focus:border-black outline-none text-black shadow-sm" placeholder="Size, model, details..." value={item.spec} onChange={e => {
                     const copy = [...data.equipment]; copy[index].spec = e.target.value; setData({...data, equipment: copy});
                   }} />
                 </div>
                 <div className="space-y-1">
                   <label className="text-[9px] font-black uppercase text-zinc-400">Date Needed</label>
-                  <input type="date" className="w-full bg-zinc-50 border border-zinc-200 rounded-xl p-3 text-sm focus:border-black outline-none text-black" value={item.dateNeeded} onChange={e => {
+                  <input type="date" className="w-full bg-white border border-zinc-300 rounded-xl p-3 text-sm focus:border-black outline-none text-black shadow-sm" value={item.dateNeeded} onChange={e => {
                     const copy = [...data.equipment]; copy[index].dateNeeded = e.target.value; setData({...data, equipment: copy});
                   }} />
                 </div>
@@ -566,13 +566,13 @@ export default function App() {
               const copy = [...data.fuel]; copy[index].type = val; setData({...data, fuel: copy});
             }} />
             <div className="grid md:grid-cols-3 gap-10">
-              <input className="bg-transparent border-b border-zinc-100 p-2 text-black focus:border-black outline-none" placeholder="Spec" value={item.spec} onChange={e => {
+              <input className="bg-white border border-zinc-300 rounded-xl px-4 py-3 text-black focus:border-black outline-none shadow-sm" placeholder="Spec" value={item.spec} onChange={e => {
                 const copy = [...data.fuel]; copy[index].spec = e.target.value; setData({...data, fuel: copy});
               }} />
-              <input className="bg-transparent border-b border-zinc-100 p-2 text-black focus:border-black outline-none" placeholder="Quantity" value={item.qty} onChange={e => {
+              <input className="bg-white border border-zinc-300 rounded-xl px-4 py-3 text-black focus:border-black outline-none shadow-sm" placeholder="Quantity" value={item.qty} onChange={e => {
                 const copy = [...data.fuel]; copy[index].qty = e.target.value; setData({...data, fuel: copy});
               }} />
-              <input type="date" className="bg-transparent border-b border-zinc-100 p-2 text-black focus:border-black outline-none" value={item.dateNeeded} onChange={e => {
+              <input type="date" className="bg-white border border-zinc-300 rounded-xl px-4 py-3 text-black focus:border-black outline-none shadow-sm" value={item.dateNeeded} onChange={e => {
                 const copy = [...data.fuel]; copy[index].dateNeeded = e.target.value; setData({...data, fuel: copy});
               }} />
             </div>
@@ -597,14 +597,14 @@ export default function App() {
       {data.process.map((item, index) => (
         <div key={item.id} className="fume-card p-10 rounded-[3rem] space-y-8 bg-white border border-zinc-100 shadow-sm">
           <div className="grid md:grid-cols-2 gap-10">
-            <input type="datetime-local" className="bg-transparent border-b border-zinc-100 p-2 text-black focus:border-black outline-none" value={item.date} onChange={e => {
+            <input type="datetime-local" className="bg-white border border-zinc-300 rounded-xl px-4 py-3 text-black focus:border-black outline-none shadow-sm" value={item.date} onChange={e => {
               const copy = [...data.process]; copy[index].date = e.target.value; setData({...data, process: copy});
             }} />
-            <input className="bg-transparent border-b border-zinc-100 p-2 text-black focus:border-black outline-none uppercase font-black" placeholder="Activity" value={item.process} onChange={e => {
+            <input className="bg-white border border-zinc-300 rounded-xl px-4 py-3 text-black focus:border-black outline-none uppercase font-black shadow-sm" placeholder="Activity" value={item.process} onChange={e => {
               const copy = [...data.process]; copy[index].process = e.target.value; setData({...data, process: copy});
             }} />
           </div>
-          <textarea className="w-full bg-zinc-50 border border-zinc-100 rounded-2xl p-6 text-black focus:border-black outline-none" placeholder="Result / Requirements" value={item.result} onChange={e => {
+          <textarea className="w-full bg-white border border-zinc-300 rounded-2xl p-6 text-black focus:border-black outline-none shadow-sm" placeholder="Result / Requirements" value={item.result} onChange={e => {
             const copy = [...data.process]; copy[index].result = e.target.value; setData({...data, process: copy});
           }} />
         </div>
@@ -627,27 +627,27 @@ export default function App() {
               const copy = [...data.staff]; copy[idx].role = val; setData({...data, staff: copy});
             }} />
             <div className="grid md:grid-cols-2 gap-8">
-              <input className="bg-transparent border-b border-zinc-100 p-2 text-black font-black uppercase" placeholder="Full Name" value={member.fullName} onChange={e => {
+              <input className="bg-white border border-zinc-300 rounded-xl px-4 py-3 text-black font-black uppercase shadow-sm focus:border-black outline-none" placeholder="Full Name" value={member.fullName} onChange={e => {
                 const copy = [...data.staff]; copy[idx].fullName = e.target.value; setData({...data, staff: copy});
               }} />
-              <input className="bg-transparent border-b border-zinc-100 p-2 text-black" placeholder="Passport #" value={member.passportNumber} onChange={e => {
+              <input className="bg-white border border-zinc-300 rounded-xl px-4 py-3 text-black shadow-sm focus:border-black outline-none" placeholder="Passport #" value={member.passportNumber} onChange={e => {
                 const copy = [...data.staff]; copy[idx].passportNumber = e.target.value; setData({...data, staff: copy});
               }} />
               <div className="space-y-1">
                 <label className="text-[9px] font-black uppercase text-zinc-400">Passport Expiry Date</label>
-                <input type="date" className="w-full bg-transparent border-b border-zinc-100 p-2 text-black focus:border-black outline-none text-sm" value={member.passportExpiry} onChange={e => {
+                <input type="date" className="w-full bg-white border border-zinc-300 rounded-xl px-4 py-3 text-black focus:border-black outline-none text-sm shadow-sm" value={member.passportExpiry} onChange={e => {
                   const copy = [...data.staff]; copy[idx].passportExpiry = e.target.value; setData({...data, staff: copy});
                 }} />
               </div>
               <div className="space-y-1">
                 <label className="text-[9px] font-black uppercase text-zinc-400">Date of Birth</label>
-                <input type="date" className="w-full bg-transparent border-b border-zinc-100 p-2 text-black focus:border-black outline-none text-sm" value={member.dob} onChange={e => {
+                <input type="date" className="w-full bg-white border border-zinc-300 rounded-xl px-4 py-3 text-black focus:border-black outline-none text-sm shadow-sm" value={member.dob} onChange={e => {
                   const copy = [...data.staff]; copy[idx].dob = e.target.value; setData({...data, staff: copy});
                 }} />
               </div>
               <div className="space-y-1 md:col-span-2">
                 <label className="text-[9px] font-black uppercase text-zinc-400">Home Address</label>
-                <input className="w-full bg-transparent border-b border-zinc-100 p-2 text-black focus:border-black outline-none text-sm" placeholder="Street, City, State, ZIP" value={member.address} onChange={e => {
+                <input className="w-full bg-white border border-zinc-300 rounded-xl px-4 py-3 text-black focus:border-black outline-none text-sm shadow-sm" placeholder="Street, City, State, ZIP" value={member.address} onChange={e => {
                   const copy = [...data.staff]; copy[idx].address = e.target.value; setData({...data, staff: copy});
                 }} />
               </div>
@@ -674,13 +674,13 @@ export default function App() {
       <div className="fume-card p-12 rounded-[3.5rem] grid md:grid-cols-2 gap-20 bg-white shadow-sm border border-zinc-100">
         <div className="space-y-10">
           <h4 className="text-black font-black italic uppercase border-b border-zinc-100 pb-4 flex items-center gap-3">USA ➔ UK</h4>
-          <input className="w-full bg-transparent border-b border-zinc-100 p-2 text-xl font-bold uppercase text-black focus:border-black outline-none" placeholder="Departure HUB" value={data.flights.outboundAirport} onChange={e => updateFlights('outboundAirport', e.target.value)} />
-          <input type="date" className="w-full bg-transparent border-b border-zinc-100 p-2 text-black focus:border-black outline-none" value={data.flights.outboundDate} onChange={e => updateFlights('outboundDate', e.target.value)} />
+          <input className="w-full bg-white border border-zinc-300 rounded-xl px-4 py-3 text-xl font-bold uppercase text-black focus:border-black outline-none shadow-sm" placeholder="Departure HUB" value={data.flights.outboundAirport} onChange={e => updateFlights('outboundAirport', e.target.value)} />
+          <input type="date" className="w-full bg-white border border-zinc-300 rounded-xl px-4 py-3 text-black focus:border-black outline-none shadow-sm" value={data.flights.outboundDate} onChange={e => updateFlights('outboundDate', e.target.value)} />
         </div>
         <div className="space-y-10">
           <h4 className="text-black font-black italic uppercase border-b border-zinc-100 pb-4 flex items-center gap-3">UK ➔ USA</h4>
-          <input className="w-full bg-transparent border-b border-zinc-100 p-2 text-xl font-bold uppercase text-black focus:border-black outline-none" placeholder="Arrival HUB" value={data.flights.usArrivalAirport} onChange={e => updateFlights('usArrivalAirport', e.target.value)} />
-          <input type="date" className="w-full bg-transparent border-b border-zinc-100 p-2 text-black focus:border-black outline-none" value={data.flights.inboundDate} onChange={e => updateFlights('inboundDate', e.target.value)} />
+          <input className="w-full bg-white border border-zinc-300 rounded-xl px-4 py-3 text-xl font-bold uppercase text-black focus:border-black outline-none shadow-sm" placeholder="Arrival HUB" value={data.flights.usArrivalAirport} onChange={e => updateFlights('usArrivalAirport', e.target.value)} />
+          <input type="date" className="w-full bg-white border border-zinc-300 rounded-xl px-4 py-3 text-black focus:border-black outline-none shadow-sm" value={data.flights.inboundDate} onChange={e => updateFlights('inboundDate', e.target.value)} />
         </div>
       </div>
     </div>
@@ -699,7 +699,7 @@ export default function App() {
             <div className="space-y-3">
               <label className="text-[10px] font-black uppercase text-zinc-400 tracking-widest">Number of Rooms Required</label>
               <input 
-                className="w-full bg-transparent border-b border-zinc-100 p-2 text-2xl font-black text-black focus:border-black outline-none"
+                className="w-full bg-white border border-zinc-300 rounded-xl px-4 py-3 text-2xl font-black text-black focus:border-black outline-none shadow-sm"
                 placeholder="e.g. 4 Rooms"
                 value={data.hotel.numRooms}
                 onChange={e => setData({...data, hotel: {...data.hotel, numRooms: e.target.value}})}
@@ -708,7 +708,7 @@ export default function App() {
             <div className="space-y-3">
               <label className="text-[10px] font-black uppercase text-zinc-400 tracking-widest">Room Specifications</label>
               <textarea 
-                className="w-full bg-zinc-50 border border-zinc-100 rounded-2xl p-6 text-sm min-h-[100px] focus:border-black outline-none text-black"
+                className="w-full bg-white border border-zinc-300 rounded-2xl p-6 text-sm min-h-[100px] focus:border-black outline-none text-black shadow-sm"
                 placeholder="Please specify where individual rooms are needed vs shared/twin rooms..."
                 value={data.hotel.roomSpec}
                 onChange={e => setData({...data, hotel: {...data.hotel, roomSpec: e.target.value}})}
@@ -719,11 +719,11 @@ export default function App() {
           <div className="grid md:grid-cols-2 gap-10">
             <div className="space-y-3">
               <label className="text-[10px] font-black uppercase text-zinc-400 tracking-widest">Check-In Date</label>
-              <input type="date" className="w-full bg-transparent border-b border-zinc-100 p-2 text-black focus:border-black outline-none" value={data.hotel.checkIn} onChange={e => setData({...data, hotel: {...data.hotel, checkIn: e.target.value}})} />
+              <input type="date" className="w-full bg-white border border-zinc-300 rounded-xl px-4 py-3 text-black focus:border-black outline-none shadow-sm" value={data.hotel.checkIn} onChange={e => setData({...data, hotel: {...data.hotel, checkIn: e.target.value}})} />
             </div>
             <div className="space-y-3">
               <label className="text-[10px] font-black uppercase text-zinc-400 tracking-widest">Check-Out Date</label>
-              <input type="date" className="w-full bg-transparent border-b border-zinc-100 p-2 text-black focus:border-black outline-none" value={data.hotel.checkOut} onChange={e => setData({...data, hotel: {...data.hotel, checkOut: e.target.value}})} />
+              <input type="date" className="w-full bg-white border border-zinc-300 rounded-xl px-4 py-3 text-black focus:border-black outline-none shadow-sm" value={data.hotel.checkOut} onChange={e => setData({...data, hotel: {...data.hotel, checkOut: e.target.value}})} />
             </div>
           </div>
         </div>
